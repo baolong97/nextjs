@@ -42,5 +42,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.base_ref_branch }}
+          tags: ${{ steps.meta.outputs.tags }}:${GITHUB_REF:10}
           labels: ${{ steps.meta.outputs.labels }}
