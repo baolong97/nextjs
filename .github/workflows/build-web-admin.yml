@@ -42,5 +42,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: web-admin:${{ github.sha }}
+          tags: ${{ steps.meta.outputs.base_ref_branch }}
           labels: ${{ steps.meta.outputs.labels }}
