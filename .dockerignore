@@ -1,0 +1,11 @@
+.circleci
+.DS_Store
+.env 
+.git
+.vscode
+build
+build-ide
+coverage
+docs
+microsoft.gpg
+node_modules
