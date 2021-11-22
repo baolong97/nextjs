@@ -33,9 +33,9 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
-          context: .
+          context: ./packages/web-admin
           push: true
-          tags: ${{ env.REGISTRY }}/${{github.repository_owner}}/nestjs:${{ github.sha }}
-          labels: ${{ env.REGISTRY }}/${{github.repository_owner}}/nestjs:${{ github.sha }}
+          tags: ${{ env.REGISTRY }}/${{github.repository_owner}}/web-admin:${{ github.sha }}
+          labels: ${{ env.REGISTRY }}/${{github.repository_owner}}/web-admin:${{ github.sha }}
           build-args: |
-            BASE_IMAGE=localhost:5000/my-project/base
+            BASE_URL=https://api.goldfever.io/admin
