@@ -27,8 +27,8 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: l7r7/sample
-          tag-custom: latest
+          images: ${{github.repository_owner}}/web-admin
+          tag-custom: ${{github.ref_name}}
           tag-semver: |
             {{raw}}
 
@@ -43,7 +43,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.REGISTRY }}/${{github.repository_owner}}/web-admin:${{ steps.docker_meta.outputs.tags }}
-          labels: ${{ env.REGISTRY }}/${{github.repository_owner}}/web-admin:${{ steps.docker_meta.outputs.tags }}
+          tags: ${{ env.REGISTRY }}/${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ env.REGISTRY }}/${{ steps.docker_meta.outputs.tags }}
           build-args: |
             BASE_URL=https://api.goldfever.io/admin
