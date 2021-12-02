@@ -9,7 +9,9 @@ on:
   push:
     branches: ["master"]
     tags:
-      - '*'
+      - 'admin-v*.*'
+    paths:
+      - pages/**
 
 env:
   REGISTRY: ghcr.io
