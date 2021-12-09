@@ -10,8 +10,6 @@ on:
     branches: ["master"]
     tags:
       - 'admin-v*.*'
-    paths:
-      - pages/**
 
 env:
   REGISTRY: ghcr.io
@@ -36,7 +34,7 @@ jobs:
             ${{ env.REGISTRY }}/${{github.repository_owner}}/web-admin
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=ref,event=branch
+            type=ref,prefix=123,suffix=123,event=branch
             type=ref,event=tag
             type=sha
       - name: Log in to the Container registry
