@@ -1,0 +1,13 @@
+#import { SellItemsFragment } from './getBuildingData.graphql'
+mutation updateBuildingData(
+  $Identifier: String!
+  $sellitems: [SellItemsInput]
+) {
+  updateBuildingData(
+    input: { Identifier: $Identifier, sellitems: $sellitems }
+  ) {
+    sellitems {
+      ...SellItemsFragment
+    }
+  }
+}

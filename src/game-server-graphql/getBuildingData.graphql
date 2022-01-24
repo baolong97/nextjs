@@ -1,0 +1,13 @@
+query getBuildingData($Identifier: String!) {
+  getBuildingData(Identifier: $Identifier) {
+    sellitems {
+      ...SellItemsFragment
+    }
+  }
+}
+
+fragment SellItemsFragment on SellItems {
+  amount
+  itemid
+  price
+}

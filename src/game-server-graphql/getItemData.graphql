@@ -1,0 +1,5 @@
+query getItemData($itemID: String!) {
+  getItemData(itemID: $itemID) {
+    jsonData
+  }
+}

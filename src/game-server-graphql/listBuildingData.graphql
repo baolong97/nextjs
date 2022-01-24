@@ -1,0 +1,9 @@
+query listBuildingData {
+  listBuildingData{
+		items{
+			Identifier
+		}
+	}
+}
+
+

@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --fix"
+    "lint": "eslint --fix",
+    "generate:game-server-gql": "graphql-codegen --config game-server-codegen.js -r dotenv/config",
+    "generate": "pnpm run generate:game-server-gql",
+    "postinstall": "pnpm run generate"
   },
   "dependencies": {
     "next": "10.0.5",
@@ -15,6 +18,13 @@
   },
   "devDependencies": {
     "eslint": "^8.3.0",
-    "eslint-plugin-react": "^7.27.1"
+    "eslint-plugin-react": "^7.27.1",
+    "@graphql-codegen/cli": "2.3.0",
+    "@graphql-codegen/typescript": "2.4.0",
+    "@graphql-codegen/typescript-graphql-request": "^4.3.0",
+    "@graphql-codegen/typescript-operations": "2.2.0",    
+    "graphql": "^16.0.1",
+    "graphql-request": "^3.6.1",
+    "graphql-tag": "^2.12.6"
   }
 }

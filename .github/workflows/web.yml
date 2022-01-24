@@ -27,6 +27,8 @@ jobs:
           run_install: true
 
       - name: Install modules
+        env: # Or as an environment variable
+          GAME_SERVER_X_API_KEY: ${{ secrets.GAME_SERVER_X_API_KEY }}
         run: pnpm i
 
       - name: Run lint
